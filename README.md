@@ -33,8 +33,8 @@ Should have the following headers:
 - `Assets/Cards.js`
 - `Assets/Math.js`
 
+If you know how to import files using `require()` then this should not be a problem for you.
 All you need to do is to place these files in the correct path<br>
-If you know how to require a file, then this shouldn't be a problem.
 
 Once you've manage to make it work, please don't forget to enjoy!
 ##### Contact Me
