@@ -12,6 +12,14 @@ let get = userData.rows[0].fields;
 let currentMoney = parseInt(get['Money']);
 let type = data.options[0].value;
 let insertAmount = data.options[1].value;
+if (!currentMoney) {
+    await lib.discord.interactions['@release'].responses.create({
+      token, response_type: 'DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE'
+    });
+    return lib.discord.interactions['@release'].responses.update({
+      token, content: `You don't have money :(`,
+    });
+  }
 let getValue;
 if (type.startsWith('enter a percentage')) {
   if (insertAmount <= 0) {
@@ -45,7 +53,7 @@ let newBalance = currentMoney - getValue;
 await lib.googlesheets.query['@release'].update({
   range: `A:G`, bounds: 'FIRST_EMPTY_ROW',
   where: [{ 'User__is': member.user.id }],
-  fields: { 'Bank': newBank, 'Money': newBalance, }
+  fields: { 'Money': newBalance, }
 });
 const users = await lib.discord.users['@release'].retrieve({ user_id: member.user.id });
 const userPfp = !users.avatar
