@@ -22,7 +22,7 @@ if (type.startsWith('enter a percentage')) {
       token, content: `Invalid output.`,
     });
   }
-  getValue = Percent(Math.min(100, insertAmount), currentMoney);
+  getValue = (Math.min(100, insertAmount) / 100) * currentMoney;
 } else {
   if (insertAmount > currentMoney) {
     await lib.discord.interactions['@release'].responses.create({
