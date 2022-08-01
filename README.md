@@ -3,8 +3,6 @@
 ## Update Log
 Version: `0.0.0`<br>
 Published - 8/1/2022<br>
-Version: `0.0.1`<br>
-Updated Markdown - 8/1/2022
 
 ### Description
 
