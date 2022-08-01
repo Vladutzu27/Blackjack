@@ -11,6 +11,12 @@ This Is A Open Source BlackJack Script For Discord Bots Made In Autocode
 Want to play Blackjack game? Just install this to your bot<br>
 All you need to do is to place the files in the correct path.
 
+### Setup
+You need a google spreadsheet as your input database for this code to work.
+Should have this following headers:
+- User (all discord epochs stored)
+- Money (where all digital assets stored)
+
 #### Commands
 - functions/Commands/BlackJack.js
 - functions/Commands/Hit.js
