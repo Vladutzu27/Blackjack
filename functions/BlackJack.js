@@ -11,7 +11,6 @@ if (!userData.rows.length) return;
 let get = userData.rows[0].fields;
 let currentMoney = parseInt(get['Money']);
 let type = data.options[0].value;
-return console.log(type);
 let insertAmount = data.options[1].value;
 let getValue;
 if (type.startsWith('enter a percentage')) {
