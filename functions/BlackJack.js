@@ -4,7 +4,7 @@ const { StartWin, StartLose } = require('../../Assets/Logic.js');
 const event = context.params.event;
 const { channel_id, guild_id, member, data } = event;
 const userData = await lib.googlesheets.query['@release'].select({
-  range: `Level!A:G`, bounds: 'FIRST_EMPTY_ROW',
+  range: `A:B`, bounds: 'FIRST_EMPTY_ROW',
   where: [{ 'User__is': member.user.id }],
 });
 if (!userData.rows.length) return;
@@ -43,7 +43,7 @@ if (type.startsWith('enter a percentage')) {
 }
 let newBalance = currentMoney - getValue;
 await lib.googlesheets.query['@release'].update({
-  range: `Level!A:G`, bounds: 'FIRST_EMPTY_ROW',
+  range: `A:G`, bounds: 'FIRST_EMPTY_ROW',
   where: [{ 'User__is': member.user.id }],
   fields: { 'Bank': newBank, 'Money': newBalance, }
 });
