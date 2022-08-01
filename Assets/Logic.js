@@ -9,7 +9,7 @@ async function Win(gameAssets, event, double=0) {
     content: ``,
     components: allButtons(),
     embeds: [{
-      description: `You won ${bet}!`,
+      description: `You won ${bet} <a:coinreward:993252082977079366>!`,
       color: 0x000000,
       type: 'rich',
       fields: infoData(gameAssets),
@@ -34,7 +34,7 @@ async function Lose(gameAssets, event, double=0) {
     content: ``,
     components: allButtons(),
     embeds: [{
-      description: `You lose ${bet}`,
+      description: `You lose ${bet} <a:coinreward:993252082977079366>`,
       color: 0x000000,
       type: 'rich',
       fields: infoData(gameAssets),
@@ -83,20 +83,20 @@ async function StartWin(gameAssets, userPfp, event, double = 0) {
     content: ``,
     components: allButtons(),
     embeds: [{
-      description: `You won ${bet}!`,
+      description: `You won ${bet} <a:coinreward:993252082977079366>!`,
       color: 0x000000,
       type: 'rich',
       fields: infoData(gameAssets),
       timestamp: new Date().toISOString(),
       footer: { text: `BlackJack ` },
       author: { 
-        name: `${event.author.username}#${event.author.discriminator}`,
+        name: `${event.member.user.username}#${event.member.user.discriminator}`,
         url: userPfp,
         icon_url: userPfp,
       }
     }]
   });
-  await Result('win', bet, event.author.id, double);
+  await Result('win', bet, event.member.user.id, double);
   return true;
 }
 
@@ -107,20 +107,20 @@ async function StartLose(gameAssets, userPfp, event, double = 0) {
     content: ``,
     components: allButtons(),
     embeds: [{
-      description: `You lose ${bet}`,
+      description: `You lose ${bet} <a:coinreward:993252082977079366>`,
       color: 0x000000,
       type: 'rich',
       fields: infoData(gameAssets),
       timestamp: new Date().toISOString(),
       footer: { text: `BlackJack ` },
       author: { 
-        name: `${event.author.username}#${event.author.discriminator}`,
+        name: `${event.member.user.username}#${event.member.user.discriminator}`,
         url: userPfp,
         icon_url: userPfp,
       }
     }]
   });
-  await Result('lose', bet, event.author.id, double);
+  await Result('lose', bet, event.member.user.id, double);
   return true;
 }
 
@@ -135,7 +135,7 @@ async function Result(game, bet, id, double) {
   else if (game === 'draw') finalResult = (money + parseInt(bet)) * double;
   else finalResult = money;
   await lib.googlesheets.query['@release'].update({
-    range: `A:B`, bounds: 'FIRST_EMPTY_ROW',
+    range: `Level!A:F`, bounds: 'FIRST_EMPTY_ROW',
     where: [{ 'User__is': id }],
     fields: { 'Money': finalResult }
   });
