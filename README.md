@@ -8,8 +8,8 @@ Version: 0.0.0
 
 This Is A Open Source BlackJack Script For Discord Bots Made In Autocode
 
-Want to play Blackjack game? Just install this to your bot
-But first, you'll need those files to be placed in correct path
+Want to play Blackjack game? Just install this to your bot<br>
+All you need to do is to place the files in the correct path.
 
 #### Commands
 - functions/Commands/BlackJack.js
