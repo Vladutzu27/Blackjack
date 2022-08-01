@@ -23,7 +23,7 @@ if (type.startsWith('enter a percentage')) {
     });
   }
   getValue = Percent(Math.min(100, insertAmount), currentMoney);
-} else { // if specified value
+} else {
   if (insertAmount > currentMoney) {
     await lib.discord.interactions['@release'].responses.create({
       token, response_type: 'DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE'
@@ -51,7 +51,7 @@ const users = await lib.discord.users['@release'].retrieve({ user_id: member.use
 const userPfp = !users.avatar
 ? `https://cdn.discordapp.com/embed/avatars/${parseInt(user.discriminator) % 5}.png`
 : `https://cdn.discordapp.com/avatars/${users.id}/${users.avatar}.${users.avatar.startsWith('a_') ? 'gif' : 'png'}?size=2048`;
-let bet = output[1];
+let bet = getValue;
 let selectedCards = [];
 let playerCard = [];
 let botCard = [];
