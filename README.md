@@ -1,9 +1,9 @@
 # Blackjack
 
 ## Update Log
-Version: 0.0.0
+Version: 0.0.0<br>
 Published - 8/1/2022 (1:27PM) GMT+8<br>
-Version: 0.0.1
+Version: 0.0.1<br>
 Updated Markdown - 8/1/2022 (3:40PM) GMT+8
 
 ### Description
