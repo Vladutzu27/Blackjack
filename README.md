@@ -2,7 +2,9 @@
 
 ## Update Log
 Version: 0.0.0
-- 8/1/2022 (1:27PM) GMT+8
+Published - 8/1/2022 (1:27PM) GMT+8
+Version: 0.0.1
+- Fixed Markdown 8/1/2022 (3:36PM) GMT+8
 
 ### Description
 
