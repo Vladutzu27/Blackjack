@@ -1,6 +1,6 @@
 const lib = require('lib')({token: process.env.STDLIB_SECRET_TOKEN});
-const { CardGenerator, PickCard } = require('../../../../Functions/Cards.js');
-const { StartWin, StartLose } = require('../../../../Functions/Logic.js');
+const { CardGenerator, PickCard } = require('../../Assets/Cards.js');
+const { StartWin, StartLose } = require('../../Assets/Logic.js');
 const event = context.params.event;
 const { channel_id, guild_id, member, data } = event;
 const userData = await lib.googlesheets.query['@release'].select({
@@ -14,29 +14,29 @@ let type = data.options[0].value;
 return console.log(type);
 let insertAmount = data.options[1].value;
 let getValue;
-if (type.startsWith('enter a percentage')) { // if percentage value
+if (type.startsWith('enter a percentage')) {
   if (insertAmount <= 0) {
     await lib.discord.interactions['@release'].responses.create({
       token, response_type: 'DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE'
     });
-    return lib.discord.interactions['@release'].responses.update({ // sends an notification message.
+    return lib.discord.interactions['@release'].responses.update({
       token, content: `Invalid output.`,
     });
   }
   getValue = Percent(Math.min(100, insertAmount), currentMoney);
 } else { // if specified value
-  if (insertAmount > currentMoney) { // if the balance is higher than the users current money
+  if (insertAmount > currentMoney) {
     await lib.discord.interactions['@release'].responses.create({
       token, response_type: 'DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE'
     });
-    return lib.discord.interactions['@release'].responses.update({ // sends an notification message.
+    return lib.discord.interactions['@release'].responses.update({
       token, content: `You only have $${currentMoney}`,
     });
   } else if (insertAmount <= 0) {
     await lib.discord.interactions['@release'].responses.create({
       token, response_type: 'DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE'
     });
-    return lib.discord.interactions['@release'].responses.update({ // sends an notification message.
+    return lib.discord.interactions['@release'].responses.update({
       token, content: `Input must be higher than 0`,
     });
   }
@@ -130,7 +130,7 @@ if (totalPlayerCardValue === 21) {
       type: 'rich',
       fields: [
         {
-        name: `Your Hand`, // Players Hand
+        name: `Your Hand`,
         value: [
           yourHand,
           ``,
@@ -139,7 +139,7 @@ if (totalPlayerCardValue === 21) {
         inline: true,
         },
         {
-        name: `Dealer Hand`, // Dealer Hand
+        name: `Dealer Hand`,
         value: [
           dealerHand,
           ``,
