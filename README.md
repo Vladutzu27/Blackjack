@@ -40,5 +40,6 @@ Once you've manage to make it work, please don't forget to enjoy!
 ##### Contact Me
 Still not working? Don't know what to do?
 - You can DM me on Discord: `LuckyGuy#3379`
-
-Any feedbacks about this app will be appreciated :D
+<br>
+<br>
+Any feedbacks will be appreciated :D
