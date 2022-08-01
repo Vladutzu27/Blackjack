@@ -14,8 +14,8 @@ Want to play Blackjack game? Just install this to your bot<br>
 All you need to do is to place the files in the correct path.
 
 ### Setup
-You need a google spreadsheet as your input database for this code to work.
-Should have this following headers:
+You need a google spreadsheet as your input database for this code to work.<br>
+Should have the following headers:
 - `User` (All Discord Epochs stored)
 - `Money` (All Digital Assets stored)
 
