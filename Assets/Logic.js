@@ -135,7 +135,7 @@ async function Result(game, bet, id, double) {
   else if (game === 'draw') finalResult = (money + parseInt(bet)) * double;
   else finalResult = money;
   await lib.googlesheets.query['@release'].update({
-    range: `Level!A:F`, bounds: 'FIRST_EMPTY_ROW',
+    range: `A:B`, bounds: 'FIRST_EMPTY_ROW',
     where: [{ 'User__is': id }],
     fields: { 'Money': finalResult }
   });
