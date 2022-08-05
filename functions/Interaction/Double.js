@@ -1,6 +1,6 @@
 const lib = require('lib')({token: process.env.STDLIB_SECRET_TOKEN});
-const { CardGenerator, PickCard } = require('../../Functions/Cards.js');
-const { Win, Lose, Draw } = require('../../Functions/Logic.js');
+const { CardGenerator, PickCard } = require('../../Assets/Cards.js');
+const { Win, Lose, Draw } = require('../../Assets/Logic.js');
 const event = context.params.event;
 const { member, message, channel_id, guild_id } = event;
 let game = await lib.keyvalue.store['@release'].get({
