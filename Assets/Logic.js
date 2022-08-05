@@ -9,7 +9,7 @@ async function Win(gameAssets, event, double=0) {
     content: ``,
     components: allButtons(),
     embeds: [{
-      description: `You won ${bet} <a:coinreward:993252082977079366>!`,
+      description: `You won ${bet}!`,
       color: 0x000000,
       type: 'rich',
       fields: infoData(gameAssets),
@@ -34,7 +34,7 @@ async function Lose(gameAssets, event, double=0) {
     content: ``,
     components: allButtons(),
     embeds: [{
-      description: `You lose ${bet} <a:coinreward:993252082977079366>`,
+      description: `You lose ${bet}`,
       color: 0x000000,
       type: 'rich',
       fields: infoData(gameAssets),
@@ -83,7 +83,7 @@ async function StartWin(gameAssets, userPfp, event, double = 0) {
     content: ``,
     components: allButtons(),
     embeds: [{
-      description: `You won ${bet} <a:coinreward:993252082977079366>!`,
+      description: `You won ${bet}!`,
       color: 0x000000,
       type: 'rich',
       fields: infoData(gameAssets),
@@ -107,7 +107,7 @@ async function StartLose(gameAssets, userPfp, event, double = 0) {
     content: ``,
     components: allButtons(),
     embeds: [{
-      description: `You lose ${bet} <a:coinreward:993252082977079366>`,
+      description: `You lose ${bet}`,
       color: 0x000000,
       type: 'rich',
       fields: infoData(gameAssets),
